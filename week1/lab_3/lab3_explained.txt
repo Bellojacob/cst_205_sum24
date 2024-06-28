@@ -1,0 +1,10 @@
+For lab 3, our first task is to create a dictionary containing key:value pairs
+of colors. Then we use our key to access the values and print out some
+sentences. Then we practice accessing other tuple items within a dictionary in
+code that is given to us. Then we create a function that receives user input
+and uses string literals to return a string of their rgb color. Next we allow
+the user to enter a tuple as an arguments and we print their individual rgb
+values. Then our last two functions, we convert from rgb to hex and then hex
+to rgb.
+
+-Jacob Bello

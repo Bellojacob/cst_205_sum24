@@ -1,0 +1,7 @@
+For lab 2, we are tasked to represent RGB color values in python. For this I
+created a python script to allow the user to enter an RGB color combination,
+and using conditionals, python will determine what the dominate primary color
+is within the color specified. Some of the colors I experiemented with in part
+one were, (247,59,109) Reddish, (30,222,243) Blueish, (72,243,30) Greenish.
+Then for part 2, if two color channels are equal, we determine what the color
+is, and print out the color combination.

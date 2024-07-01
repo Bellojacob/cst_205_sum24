@@ -41,7 +41,8 @@ class MyWindow(QWidget):
 
     @Slot()
     def search(self):
-        
+        i = self.combo_box.current_index
+        print(i)
         search_term = self.line_edit.text
         # print(search_term)
         best_match = my_search(search_term)
@@ -55,7 +56,7 @@ class MyWindow(QWidget):
     def open_new_win(self, img_path):
         self.new_win = NewWindow(img_path)
         self.new_win.show()
-        i = self.combo_box.current_index()
+        
     
 class NewWindow(QWidget):
     def __init__(self, img_path):

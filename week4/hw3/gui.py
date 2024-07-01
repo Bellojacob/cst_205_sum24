@@ -4,7 +4,7 @@ from PySide6.QtWidgets import (QWidget, QApplication, QLabel, QPushButton,
 from PySide6.QtCore import Qt, Slot
 from __feature__ import snake_case, true_property
 from PySide6.QtGui import QPixmap
-from functions import sepia, negative, grayscale, thumbnail, none_show, my_search
+from functions import my_search, image_transform
 from image_info import image_info
 
 app = QApplication([])
@@ -17,7 +17,7 @@ class MyWindow(QWidget):
         # add widgets
         self.line_edit = QLineEdit()
         self.combo_box = QComboBox()
-        self.combo_box.add_items(['Sepia', 'Negative', 'Grayscale', 'Thumbnail', 'None'])
+        self.combo_box.add_items(['None', 'Negative', 'Grayscale', 'Thumbnail', 'Sepia'])
         self.search_button = QPushButton('Search')
         self.result_label = QLabel()
         
@@ -50,21 +50,21 @@ class MyWindow(QWidget):
         img_path = (r"C:\Users\jacob\cst_205\coursework\week4\hw3\hw3_images\\" + best_match + ".jpg")
         print(img_path)
         # transformation = self.combo_box.currentText()
-        self.open_new_win(img_path)
+        self.open_new_win(img_path, i)
     
     @Slot()
-    def open_new_win(self, img_path):
-        self.new_win = NewWindow(img_path)
+    def open_new_win(self, img_path, i):
+        self.new_win = NewWindow(img_path, i)
         self.new_win.show()
         
     
 class NewWindow(QWidget):
-    def __init__(self, img_path):
+    def __init__(self, img_path, i):
         super().__init__()
 
         label = QLabel()
         
-        my_pixmap = QPixmap(img_path)
+        my_pixmap = QPixmap(image_transform(i, img_path))
         label.pixmap = my_pixmap
 
         self.layout = QVBoxLayout()

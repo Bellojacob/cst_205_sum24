@@ -95,7 +95,17 @@ def my_search(keyword):
     print(f'{best_match} has the highest number of matches: {matches[best_match]}')
     return best_match
 
-    
+def image_transform(i, img_path):
+    if i == 0:
+        none_show(img_path)
+    elif i == 1:
+        negative(img_path)
+    elif i == 2:
+        grayscale(img_path)
+    elif i == 3:
+        thumbnail(img_path)
+    elif i == 4:
+        sepia(img_path)
     
         
             

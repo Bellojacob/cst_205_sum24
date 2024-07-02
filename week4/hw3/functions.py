@@ -1,3 +1,12 @@
+"""
+NAME:   Jacob Bello
+CLASS:  CST 205
+DATE:   7/1/2024
+DESCRIPTION: This program works will gui.py and contains 4 different image transformations,
+and also allows the user to search for certain tags from image_info.py. It will then choose 
+the best match and return an image path.
+"""
+
 from PIL import Image
 from image_info import image_info
 

@@ -1,3 +1,11 @@
+"""
+NAME:   Jacob Bello
+CLASS:  CST 205
+DATE:   7/1/2024
+DESCRIPTION: This program will launch a interactive GUI using PySide6, which allows the
+users to enter an ID or tag and the program will search for an image from image_info.py, 
+hw3_images, then it will allow the user to select an image transformation and see the result 
+"""
 import sys
 from PySide6.QtWidgets import (QWidget, QApplication, QLabel, QPushButton,
                                QLineEdit, QVBoxLayout,QComboBox)

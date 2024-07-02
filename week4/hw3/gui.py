@@ -47,9 +47,10 @@ class MyWindow(QWidget):
         # print(search_term)
         best_match = my_search(search_term)
         print(my_search(search_term))
-        img_path = (r"C:\Users\jacob\cst_205\coursework\week4\hw3\hw3_images\\" + best_match + ".jpg")
+        img_path = my_search(search_term)
         print(img_path)
         # transformation = self.combo_box.currentText()
+        
         self.open_new_win(img_path, i)
     
     @Slot()

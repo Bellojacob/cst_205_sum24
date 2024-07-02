@@ -94,9 +94,18 @@ def my_search(keyword):
         
     print(matches)
 
-    best_match = max(matches, key=matches.get)
-    print(f'{best_match} has the highest number of matches: {matches[best_match]}')
-    return best_match
+    # if count == 0:
+    #     img_path = r"C:\Users\jacob\cst_205\coursework\week4\hw3\hw3_images\no_results.jpg"
+    #     return img_path
+
+    if matches:
+        best_match = max(matches, key=matches.get)
+        print(f'{best_match} has the highest number of matches: {matches[best_match]}')
+        path = r"C:\Users\jacob\cst_205\coursework\week4\hw3\hw3_images\\" + best_match + ".jpg"
+        return path
+    else:
+        best_match = r"C:\Users\jacob\cst_205\coursework\week4\hw3\hw3_images\no_results.jpg"
+        return best_match
 
 def image_transform(i, img_path):
     if i == 0:

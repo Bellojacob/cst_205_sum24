@@ -67,46 +67,49 @@ def none_show(img_path):
     img.show()
 
 # none_show((r"C:\Users\jacob\cst_205\coursework\week4\hw3\hw3_images\2152601472_55fb809919_c.jpg"))
-    
+
+    # my search function takes the term which is entered into my combo box and converts it to lowercase, 
+    # everytime my button is pressed, this method is ran through functions.py
+
 def my_search(keyword):
     keyword = keyword.lower()
     matches = {}
     # look for matching id's
 
+        # search through every img and check if keyword passed in matches the id of the image
     for x in range(len(image_info)):
         count = 0
         if image_info[x]["id"] == keyword:
             count += 1
             print(f'Found {keyword}, Times:{count}')
             
-
+            # search through each tag of each image and check if keyword pass in matches any tag
+            # for both tag and id, if they match, add to matches dictionary
         for tag in image_info[x]["tags"]:    
             if tag.lower() == keyword.lower():
                 count += 1
                 print(f'Found {tag} : {image_info[x]["id"]}, Times: {count}')
                 
-        
+            # for every image, if we have at least one count we are going to add the id to dictionary    
         if count > 0:
             matches[image_info[x]["id"]] = count
-        # else:
-        #     img_path = r"C:\Users\jacob\cst_205\coursework\week4\hw3\hw3_images\no_results"
-        #     return img_path
         
+    
     print(matches)
 
-    # if count == 0:
-    #     img_path = r"C:\Users\jacob\cst_205\coursework\week4\hw3\hw3_images\no_results.jpg"
-    #     return img_path
-
+        # if matches is not empty, then find the highest value of matches, then create a path variable which will have
+        # the path to the image which matches
     if matches:
         best_match = max(matches, key=matches.get)
         print(f'{best_match} has the highest number of matches: {matches[best_match]}')
         path = r"C:\Users\jacob\cst_205\coursework\week4\hw3\hw3_images\\" + best_match + ".jpg"
         return path
+        # else default to no results jpg
     else:
         best_match = r"C:\Users\jacob\cst_205\coursework\week4\hw3\hw3_images\no_results.jpg"
         return best_match
 
+    # based on where the index is, perform an image transformation on the selected img
 def image_transform(i, img_path):
     if i == 0:
         none_show(img_path)

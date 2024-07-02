@@ -88,6 +88,9 @@ def my_search(keyword):
         
         if count > 0:
             matches[image_info[x]["id"]] = count
+        # else:
+        #     img_path = r"C:\Users\jacob\cst_205\coursework\week4\hw3\hw3_images\no_results"
+        #     return img_path
         
     print(matches)
 

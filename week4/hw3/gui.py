@@ -76,7 +76,11 @@ class NewWindow(QWidget):
         
             # call image_transform from functions.py using current index and img_path which will decide what picture
             # appears and how or if any edits are done to it
-        my_pixmap = QPixmap(image_transform(i, img_path))
+        if img_path == r"C:\Users\jacob\cst_205\coursework\week4\hw3\hw3_images\no_results.jpg":
+            my_pixmap = QPixmap(image_transform(0, img_path))
+        else:
+            my_pixmap = QPixmap(image_transform(i, img_path))
+        
         label.pixmap = my_pixmap
 
             # set layout and add label which contains QPixmap

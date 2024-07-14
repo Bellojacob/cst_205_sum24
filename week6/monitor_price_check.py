@@ -8,5 +8,5 @@ soup = BeautifulSoup(site_html.read(), 'lxml')
 
 print(soup.title.text)
 
-price =soup.find(('div', {'class' : 'a-price-whole'}))
+price =soup.find_all('a-price-whole')
 print(price)

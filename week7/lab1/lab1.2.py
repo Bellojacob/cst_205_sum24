@@ -13,11 +13,11 @@ class MyWindow(QWidget):
         layout = QVBoxLayout()
         
         self.dial = QDial()
-        self.dial.setRange(0, 100)
-        self.dial.setValue(0)
+        self.dial.setRange(1, 250)
+        self.dial.setValue(1)
         self.dial.valueChanged.connect(self.on_dial_value_changed)
         
-        self.label = QLabel("Dial Value: 0")
+        self.label = QLabel("Dial Value: 1")
         self.button = QPushButton('Create Frequency')
         self.button.clicked.connect(self.create_freq)
         
